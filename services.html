@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Services</title>
+    <link rel="icon" type="image/x-icon" href="images/logo/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://kit.fontawesome.com/8b39912d41.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header>
+
+        <!-- Nav-Bar -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><img src="images/logo/logo.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 top-menu">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="customer_review.html">Customer Review</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="partners.html">Partners</a>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"><i class="fa-solid fa-user"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Registration</a></li>
+                                <li><a class="dropdown-item" href="#">Log in</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Head Text -->
+        <div id="mainText" class="container text-center">
+            <h1 class="display-2">Genesis Health Clinic</h1>
+            <i>Medical services for better future</i>
+        </div>
+
+    </header>
+
+    <!-- Modal with Registration Form -->
+
+    <div class="modal fade" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="registrationModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registrationModalLabel">Doctor Registration</h5>
+                    <button type="button" class="close btn btn-secondary" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    
+                    <label for="doctorType">Select Doctor Type:</label>
+                    <select id="doctorType" name="doctorType">
+                    <option value="general">General Practitioner</option>
+                    <option value="pediatrician">Pediatrician</option>
+                    <option value="cardiologist">Cardiologist</option>
+                    <option value="primaty-care">Primary Care Services</option>
+                    <option value="diagnostic-testing">Diagnostic Testing</option>
+                    <option value="telemedicine-comm">Telemedicine Communications</option>
+                    <option value="chronic-disease">Chronic Disease Management</option>
+                    </select>
+                
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+              
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="phone-num">Phone Number:</label>
+                    <input type="phone-num" id="phone-num" name="phone-num" required>
+
+                    <label for="country">Select Your Country:</label>
+                    <select id="country" name="country">
+                    <option value="Kazakhstan">Kazakhstan</option>
+                    <option value="Russia">Russia</option>
+                    <option value="Kyrgyzstan">Kyrgyzstan</option>
+                    <option value="Uzbekistan">Uzbekistan</option>
+                    <option value="Turkmenstan">Turkmenstan</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="USA">United States of America</option>
+                    </select>
+                    
+                    <button type="button" class="btn btn-secondary" id="registration-button" onclick="submitForm()">Submit</button>
+                    <audio id="audio" src="scripts/notification.mp3"></audio>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Cards -->
+
+    <section class="main-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service-card" id="animatedCard">
+                        <div class="service-thumb">
+                            <a href="#"><img src="images/services/1.jpg" alt=""></a>
+                        </div>
+                        <div class="service-details">
+                            <h4><a href="#">Primary Care Services</a></h4>
+                            <p>This service serves as the main point of contact for patients seeking
+                                medical care and aims to address a wide range of health concerns.</p>
+                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registrationModal" id="reg-btn">Sign up</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service-card">
+                        <div class="service-thumb">
+                            <a href="#"><img src="images/services/2.jpg" alt=""></a>
+                        </div>
+                        <div class="service-details">
+                            <h4><a href="#">Specialty Care Services</a></h4>
+                            <p>Patients can access specialized care for specific health conditions
+                                through these services.</p>
+                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registrationModal" id="reg-btn">Sign up</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service-card">
+                        <div class="service-thumb">
+                            <a href="#"><img src="images/services/3.jpg" alt=""></a>
+                        </div>
+                        <div class="service-details">
+                            <h4><a href="#">Telemedicine Consultations</a></h4>
+                            <p>This service enhances accessibility to healthcare, especially for patients
+                                who cannot physically visit the clinic.</p>
+                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registrationModal" id="reg-btn">Sign up</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service-card">
+                        <div class="service-thumb">
+                            <a href="#"><img src="images/img/2.jpg" alt=""></a>
+                        </div>
+                        <div class="service-details">
+                            <h4><a href="#">Diagnostic Testing</a></h4>
+                            <p>These tests help clinicians accurately identify and assess patients'
+                                health problems.</p>
+                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registrationModal" id="reg-btn">Sign up</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service-card">
+                        <div class="service-thumb">
+                            <a href="#"><img src="images/services/7.jpg" alt=""></a>
+                        </div>
+                        <div class="service-details">
+                            <h4><a href="#">Prenatal and Maternity Care</a></h4>
+                            <p>These services ensure the well-being of both the mother and the baby
+                                throughout pregnancy and childbirth.</p>
+                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registrationModal" id="reg-btn">Sign up</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service-card">
+                        <div class="service-thumb">
+                            <a href="#"><img src="images/img/9.jpg" alt=""></a>
+                        </div>
+                        <div class="service-details">
+                            <h4><a href="#">Mental Health Services</a></h4>
+                            <p>The focus here is on improving mental health, treating disorders, and
+                                promoting overall psychological wellness.</p>
+                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registrationModal" id="reg-btn">Sign up</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service-card">
+                        <div class="service-thumb">
+                            <a href="#"><img src="images/services/5.jpg" alt=""></a>
+                        </div>
+                        <div class="service-details">
+                            <h4><a href="#">Vaccination and Immunization Programs</a></h4>
+                            <p>Immunization programs play a critical role in public health and disease
+                                prevention.</p>
+                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registrationModal" id="reg-btn">Sign up</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service-card">
+                        <div class="service-thumb">
+                            <a href="#"><img src="images/services/6.jpg" alt=""></a>
+                        </div>
+                        <div class="service-details">
+                            <h4><a href="#">Chronic Disease Management</a></h4>
+                            <p>These services help patients maintain their health and improve their
+                                quality of life.</p>
+                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registrationModal" id="reg-btn">Sign up</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service-card">
+                        <div class="service-thumb">
+                            <a href="#"><img src="images/services/9.jpg" alt=""></a>
+                        </div>
+                        <div class="service-details">
+                            <h4><a href="#">Physical Therapy and Rehabilitation</a></h4>
+                            <p>These services help patients regain physical function and reduce pain.</p>
+                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registrationModal" id="reg-btn">Sign up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="container-fluid" id="footer">
+
+        <div class="row">
+            <div class="col-md-3 col-6">
+                <h4>Information</h4>
+                <ul class="list-unstyled">
+                    <li><a href="index.html">Home Page</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3 col-6">
+                <h4>Working Time</h4>
+                <ul class="list-unstyled">
+                    <li>city. Astana, avenue. Turan, 12</li>
+                    <li>mon-sun: 9:00 - 18:00</li>
+                    <li>nonstop</li>
+                </ul>
+            </div>
+
+            <div class="col-md-3 col-6">
+                <h4>Contacts</h4>
+                <ul class="list-unstyled">
+                    <li><a href="tel:5551234567">555 123-45-67</a></li>
+                    <li><a href="tel:5551234568">555 123-45-68</a></li>
+                    <li><a href="tel:5551234569">555 123-45-69</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3 col-6">
+                <h4>Social Media</h4>
+                <div class="footer-icons">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <p class="float-end"><a href="#">Back to top</a></p>
+        <p>© 1996–2023 Genesis Clinic.</p>
+    </footer>
+          
+    <script src="scripts/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+</body>
+</html>
