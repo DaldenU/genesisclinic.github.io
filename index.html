@@ -24,7 +24,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 top-menu">
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a class="nav-link" aria-current="page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
@@ -36,25 +36,60 @@
                         <li class="nav-item">
                             <a class="nav-link" href="customer_review.html">Customer Review</a>
                         </li>
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="partners.html">Partners</a>
                         </li>
                     </ul>
 
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown" id="reg_log">
 
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"><i class="fa-solid fa-user"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Registration</a></li>
-                                <li><a class="dropdown-item" href="#">Log in</a></li>
+                                <li><a class="dropdown-item" href="registration_form.html">Registration</a></li>
+                                <li><a class="dropdown-item" href="registration_form.html">Log in</a></li>
                             </ul>
                         </li>
+                        <form class="d-flex custom-search-input" role="search">
+                            <input id="searchService" class=" form-control me-2" type="search" placeholder="Search" aria-describedby="inputGroup-sizing-default" aria-label="Search">
+                            <i class="pt-3 fa-solid fa-magnifying-glass fa-beat fa-lg"></i>
+                            <div id="searchDropdown" class="dropdown-menu" aria-labelledby="searchService"></div>
+                        </form>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-                        </li>
+                        <!-- Script for Searching -->
+
+                        <script>document.getElementById('searchService').addEventListener('input', function() {
+                            let inputVal = this.value.toLowerCase();
+
+                            let servicesElements = document.querySelectorAll('div.service-details > h4');
+                            let servicesArray = [];
+
+                            for (let i = 0; i < servicesElements.length; i++) {
+                                servicesArray.push(servicesElements[i].textContent.toLowerCase());
+                            }
+
+                            let dropdown = document.getElementById('searchDropdown');
+                            dropdown.innerHTML = '';
+
+                            for (let i = 0; i < servicesArray.length; i++) {
+                                if (servicesArray[i].includes(inputVal) && inputVal !== "") {
+                                    let item = document.createElement('a');
+                                    item.href = '#';
+                                    item.className = 'dropdown-item';
+                                    item.textContent = servicesElements[i].textContent;
+                                    item.addEventListener('click', function(e) {
+                                        e.preventDefault();
+                                        document.getElementById('searchService').value = this.textContent;
+                                        dropdown.innerHTML = '';
+                                        dropdown.style.display = "none";
+                                    });
+                                    dropdown.appendChild(item);
+                                }
+                            }
+                            dropdown.style.display = dropdown.children.length ? "block" : "none";
+                        });</script>
                     </ul>
+                        <!-- Script for Searching -->
                 </div>
             </div>
         </nav>

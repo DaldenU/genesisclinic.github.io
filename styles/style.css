@@ -12,6 +12,22 @@ a {
 }
 /* NavBar */
 
+.d-flex {
+    margin: 0;
+    margin-left: 15px
+}
+.custom-search-input {
+    margin-top: 20px;
+    width: 300px; /* Adjust the width as needed */
+    padding: 6px 6px 6px 6px; /* Adjust the padding as needed */
+    background: #EBF3E8;
+}
+#reg_log {
+    margin-top: 23px;
+    right: 0;
+    left: auto;
+}
+
 .nav {
     font-size: 14px;
     text-transform: uppercase;
@@ -147,7 +163,7 @@ i{
 
 .contact-info {
     margin-top: 50px;
-    background-color: gray;
+    background-color: rgb(128, 128, 128);
     text-align: center;
     padding: 10px;
 }
